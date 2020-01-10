@@ -27,13 +27,13 @@ class Buttons extends Component{
         return(
             
             <div className = 'buttons'>
-    <button  className = 'direction'onClick = {this.previousClick}> Previous</button>
+    <button  className = 'direction'onClick = {this.previousClick}>  {'<'}Previous</button>
                 <section className ='center-buttons'>
                     <button className ='cool'>Edit</button>
                     <button className ='cool'>Delete</button>
                     <button className ='cool'>New</button>
                 </section>
-                <button className = 'direction' onClick = {this.nextClick}>Next</button>
+                <button className = 'direction' onClick = {this.nextClick}>Next{'>'} </button>
             </div>
         )
     }
