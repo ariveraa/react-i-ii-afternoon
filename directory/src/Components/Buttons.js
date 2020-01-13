@@ -1,10 +1,14 @@
 import React, {Component} from 'react'
+import NewButton from './NewButton'
+
 
 class Buttons extends Component{
     constructor(){
         super()
         this.nextClick = this.nextClick.bind(this)
         this.previousClick = this.previousClick.bind(this)
+        this.delete = this.delete.bind(this)
+        this.newPerson = this.newPerson.bind(this)
     }
     nextClick(){
         if(this.props.index < 24){
@@ -22,6 +26,20 @@ class Buttons extends Component{
 
     }
 
+    delete (){
+        if(this.props.directoryLength === 1){
+            alert('cannot delete please add to directory')
+        }
+        else{
+            this.props.deleteFn()
+        }
+        
+    }
+
+    newPerson(){
+        this.props.newPersonFn(); 
+    }
+
 
     render(){
         return(
@@ -30,8 +48,10 @@ class Buttons extends Component{
     <button  className = 'direction'onClick = {this.previousClick}>  {'<'}Previous</button>
                 <section className ='center-buttons'>
                     <button className ='cool'>Edit</button>
-                    <button className ='cool'>Delete</button>
-                    <button className ='cool'>New</button>
+                    <button className ='cool' onClick = {this.delete}>Delete</button>
+                    <button className ='cool' onClick = {this.newPerson}>New</button>
+                    <div>{this.props.newPerson && <NewButton />}</div>
+                    
                 </section>
                 <button className = 'direction' onClick = {this.nextClick}>Next{'>'} </button>
             </div>

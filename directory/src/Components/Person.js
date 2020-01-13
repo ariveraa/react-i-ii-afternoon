@@ -15,7 +15,7 @@ class Person extends Component{
             <div className = 'person-profile'>
                 <div className = 'name '>
                 <h1>{person.name.first} {person.name.last}</h1>
-                <h2 className = 'index'>{this.props.index + 1} /25</h2>
+        <h2 className = 'index'>{this.props.index + 1} /{this.props.directoryLength}</h2>
                 </div>
                 
                 <div className ='person-info'>
