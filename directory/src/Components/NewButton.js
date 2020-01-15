@@ -3,7 +3,17 @@ import React, {Component} from 'react'
 class NewButton extends Component{
     constructor(){
         super()
+        this.state = {
+            firstName:'', 
+            lastName: '', 
+            newJob:'', 
+            newEmployer:'', 
+            newMovies: []
+        }
+    }
 
+    addname(){
+        
     }
     
     render(){
